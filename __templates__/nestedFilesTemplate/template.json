@@ -1,0 +1,27 @@
+{
+  "params": {
+    "componentName": {
+      "defaultValue": "my",
+      "InputBoxOptions": {
+        "prompt": "Component name:",
+        "ignoreFocusOut": true
+      },
+      "order": 1
+    },
+    "hookContainerToState": {
+      "defaultValue": false,
+      "QuickPickValues": [
+        { "label": "Connect container to Redux store", "value": true },
+        {
+          "label": "Don't connect container to Redux store",
+          "picked": true,
+          "value": false
+        }
+      ],
+      "QuickPickOptions": {
+        "ignoreFocusOut": true
+      },
+      "order": 2
+    }
+  }
+}
