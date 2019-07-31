@@ -5,12 +5,12 @@
  * @returns {Object} - an object specifying the filename and the contents of the generated file
  */
 const template = config => {
-  const { name } = config;
+  const { componentName: name } = config;
   let contents = "";
   contents += `/** @module ${name}Component */
 
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 /**
  * @function ${name}Component

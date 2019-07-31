@@ -51,7 +51,9 @@ const writeTemplate = (destFolder, templateFiles) => {
         if (err) throw err;
       });
     } else if (file.files) {
-      fs.mkdirSync(`${destFolder}/${file.name}`);
+      try {
+        fs.mkdirSync(`${destFolder}/${file.name}`);
+      } catch (e) {}
       writeTemplate(`${destFolder}/${file.name}`, file.files);
     }
   });

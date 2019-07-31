@@ -5,7 +5,7 @@
  * @returns {Object} - an object specifying the filename and the contents of the generated file
  */
 const template = config => {
-  const { name } = config;
+  const { componentName: name } = config;
   let contents = "";
   contents += `/** @module ${name}Component.test */
 

@@ -10,7 +10,7 @@ const template = config => {
   contents += `/** @module ${name}Container */
 
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import ${name}Component from "./${name}Component";
 `;
   if (redux)
@@ -53,7 +53,7 @@ ${name}Container.defaultProps = {};
     contents += `export const ${name}ContainerTest = ${name}Container;
 export default connect(
   mapStateToProps,
-  mapDispatchToProps)(${name}Container});
+  mapDispatchToProps)(${name}Container);
 `;
   } else {
     contents += `export default ${name}Container;
