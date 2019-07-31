@@ -12,8 +12,21 @@
   "activationEvents": [
     "onCommand:extension.createTemplate"
   ],
-  "main": "./extension.js",
+  "main": "./src/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "JS Templates",
+      "properties": {
+        "js-templates.templateFilePaths": {
+          "type": "array",
+          "default": [
+            "src/__templates__",
+            "js-templates/__templates__"
+          ],
+          "description": "The locations of the folders containing your template folders."
+        }
+      }
+    },
     "commands": [
       {
         "command": "extension.createTemplate",
