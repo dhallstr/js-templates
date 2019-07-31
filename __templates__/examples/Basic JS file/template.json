@@ -1,0 +1,11 @@
+{
+  "params": {
+    "filename": {
+      "InputBoxOptions": {
+        "prompt": "Filename:",
+        "ignoreFocusOut": true
+      },
+      "order": 1
+    }
+  }
+}

@@ -5,13 +5,18 @@
  * @returns {Object} - an object specifying the filename and the contents of the generated file
  */
 const template = config => {
+  const { filename } = config;
   let contents = "";
 
-  contents += `console.log("JS is fun!");
-  `;
+  contents += `/** @module ${filename} */
+
+console.log("JS is fun!");
+
+module.exports = {};
+`;
 
   return {
-    filename: "basic.js",
+    filename,
     contents
   };
 };

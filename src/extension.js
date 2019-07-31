@@ -9,12 +9,14 @@ var input = require("./input");
  * @param {Object} templateObj - params from template.json
  */
 const getUserInputFromTemplate = templateObj => {
-  const tasks = Object.keys(templateObj).map(key => (resolve, reject) => {
-    input.getUserInput(templateObj[key]).then(answer => {
-      if (answer) resolve({ [key]: answer });
-      else reject("Input was cancelled");
+  const tasks = Object.keys(templateObj)
+    .sort(key => templateObj[key].order)
+    .map(key => (resolve, reject) => {
+      input.getUserInput(templateObj[key]).then(answer => {
+        if (answer) resolve({ [key]: answer });
+        else reject("Input was cancelled");
+      });
     });
-  });
   return tasks
     .reduce((promiseChain, currentTask) => {
       return promiseChain.then(chainResults =>
